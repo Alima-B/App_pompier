@@ -212,12 +212,12 @@ if page == pages[2] :
 
         pd.set_option('future.no_silent_downcasting', True)
         # encodage de la target
-        y_class = y_class.replace({'0-3min' : 0,
+        y_class = y_class.map({'0-3min' : 0,
                 '3-6min' : 1,
                 '6-9min' : 2,
                 "9-12min" : 3,
                 '+12min' : 4
-                }).infer_objects(copy=False)
+                })
         
         return X, y_reg, y_class
 
